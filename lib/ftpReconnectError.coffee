@@ -9,9 +9,9 @@ class FtpReconnectError extends Error
     prefix = "Error automatically reconnecting to server"
     suffix = "Triggering disconnect error"
     if onCwd
-      mainMsg = "Could not connect to server"
-    else
       mainMsg = "Could not preserve CWD"
+    else
+      mainMsg = "Could not connect to server"
     @message = "#{prefix}.  #{mainMsg}: #{@connectError}.  #{suffix}: #{@disconnectError}."
     connectErrorStack = "#{@connectError.stack||@connectError}"
     if connectErrorStack[-1..-1] != '\n'
